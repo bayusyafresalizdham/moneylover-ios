@@ -18,6 +18,7 @@
 		42799C5620C02BDB00B985AB /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42799C5520C02BDB00B985AB /* RegistrationViewController.swift */; };
 		42799C5820C0372800B985AB /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42799C5720C0372800B985AB /* MainViewController.swift */; };
 		42799C5A20C0379D00B985AB /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42799C5920C0379D00B985AB /* SplashViewController.swift */; };
+		42799C5C20C0916C00B985AB /* DatePopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42799C5B20C0916C00B985AB /* DatePopUpViewController.swift */; };
 		42BB5D1120BC7ADF00E2AAA6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42BB5D1020BC7ADF00E2AAA6 /* AppDelegate.swift */; };
 		42BB5D1320BC7ADF00E2AAA6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42BB5D1220BC7ADF00E2AAA6 /* ViewController.swift */; };
 		42BB5D1620BC7ADF00E2AAA6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42BB5D1420BC7ADF00E2AAA6 /* Main.storyboard */; };
@@ -62,6 +63,7 @@
 		42799C5520C02BDB00B985AB /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
 		42799C5720C0372800B985AB /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		42799C5920C0379D00B985AB /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
+		42799C5B20C0916C00B985AB /* DatePopUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePopUpViewController.swift; sourceTree = "<group>"; };
 		42BB5D0D20BC7ADF00E2AAA6 /* projectios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = projectios.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		42BB5D1020BC7ADF00E2AAA6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		42BB5D1220BC7ADF00E2AAA6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -162,6 +164,7 @@
 				42799C5520C02BDB00B985AB /* RegistrationViewController.swift */,
 				42799C5720C0372800B985AB /* MainViewController.swift */,
 				42799C5920C0379D00B985AB /* SplashViewController.swift */,
+				42799C5B20C0916C00B985AB /* DatePopUpViewController.swift */,
 			);
 			path = projectios;
 			sourceTree = "<group>";
@@ -346,6 +349,7 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-projectios/Pods-projectios-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Charts/Charts.framework",
 				"${BUILT_PRODUCTS_DIR}/FSPagerView/FSPagerView.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/MonthYearPicker/MonthYearPicker.framework",
@@ -356,6 +360,7 @@
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Charts.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FSPagerView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MonthYearPicker.framework",
@@ -431,6 +436,7 @@
 			files = (
 				42F7EEBB20BF61CE0050012B /* CategoryViewController.swift in Sources */,
 				4264937D20BE837800F4EEF3 /* HistoriCell.swift in Sources */,
+				42799C5C20C0916C00B985AB /* DatePopUpViewController.swift in Sources */,
 				42799C5220C0284C00B985AB /* DBUser.swift in Sources */,
 				42F7EEBD20BF6D930050012B /* MenuCell.swift in Sources */,
 				42799C5620C02BDB00B985AB /* RegistrationViewController.swift in Sources */,

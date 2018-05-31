@@ -1,5 +1,8 @@
 PODS:
   - Alamofire (4.7.2)
+  - Charts (3.1.1):
+    - Charts/Core (= 3.1.1)
+  - Charts/Core (3.1.1)
   - FSPagerView (0.7.1)
   - Kingfisher (4.7.0)
   - MonthYearPicker (3.0.0)
@@ -12,6 +15,7 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire
+  - Charts
   - FSPagerView
   - Kingfisher
   - MonthYearPicker
@@ -21,6 +25,7 @@ DEPENDENCIES:
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
     - Alamofire
+    - Charts
     - FSPagerView
     - Kingfisher
     - MonthYearPicker
@@ -30,6 +35,7 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   Alamofire: e4fa87002c137ba2d8d634d2c51fabcda0d5c223
+  Charts: 90a4d61da0f6e06684c591e3bcab11940fe61736
   FSPagerView: 958aba39684e1573755ddcfcc29f7eebb8413cee
   Kingfisher: da6b005aa96d37698e3e4f1ccfe96a5b9bbf27d6
   MonthYearPicker: 59cfa26c5bfbbc52ef147360d9846c349f578991
@@ -37,6 +43,6 @@ SPEC CHECKSUMS:
   RealmSwift: 4e903a494e05d866581d69ad6f7e7b879d446baf
   SwiftChart: ba767a678d568a5ee22d419e146a0582865e1aff
 
-PODFILE CHECKSUM: 08b6d6ddc85b4c5e6f3103473d855b287215437e
+PODFILE CHECKSUM: be01f2766f7ae0128afcd7c522890a917fe97828
 
 COCOAPODS: 1.5.0
