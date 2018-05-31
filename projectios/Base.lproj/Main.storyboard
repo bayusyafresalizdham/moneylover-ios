@@ -128,10 +128,10 @@
             </objects>
             <point key="canvasLocation" x="-1258.4000000000001" y="-9.4452773613193415"/>
         </scene>
-        <!--View Controller-->
+        <!--Masuk View Controller-->
         <scene sceneID="PSi-nR-fr7">
             <objects>
-                <viewController id="dy7-Jm-EEF" sceneMemberID="viewController">
+                <viewController id="dy7-Jm-EEF" customClass="MasukViewController" customModule="projectios" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9wz-ET-ZBr">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -144,7 +144,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <segue destination="Nz9-uk-MCu" kind="show" id="QQ9-OV-fnc"/>
+                                    <action selector="loginTapped:" destination="dy7-Jm-EEF" eventType="touchUpInside" id="GxR-dH-zam"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rLc-Hq-uRb">
@@ -186,6 +186,11 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="Z2Y-6u-wzA"/>
                     </view>
+                    <connections>
+                        <outlet property="emailText" destination="rLc-Hq-uRb" id="ipK-M3-Xou"/>
+                        <outlet property="passwordText" destination="uGM-YM-3Cw" id="Z9P-s1-qou"/>
+                        <segue destination="Nz9-uk-MCu" kind="show" identifier="loginSegue" id="RK6-jy-daE"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mwp-aj-IsP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -277,7 +282,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="X8I-9y-vbv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3239.1999999999998" y="318.89055472263868"/>
+            <point key="canvasLocation" x="3283" y="575"/>
         </scene>
         <!--Other View Controller-->
         <scene sceneID="yG3-Du-HpX">
@@ -354,6 +359,7 @@
                     <navigationItem key="navigationItem" id="NwK-JC-TCS"/>
                     <connections>
                         <outlet property="tablemenu" destination="9W6-NQ-Q5n" id="7aR-HG-cjr"/>
+                        <outlet property="uID" destination="kwD-pM-gvG" id="5In-oK-mUi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kKD-VL-6YZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -368,16 +374,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="ggQ-JZ-pKs">
-                                <rect key="frame" x="22" y="87" width="331" height="29"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <segments>
-                                    <segment title="Expense"/>
-                                    <segment title="Income"/>
-                                    <segment title="Debt &amp; Loan"/>
-                                </segments>
-                                <color key="tintColor" red="0.44705882349999998" green="0.69411764710000001" blue="0.3921568627" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </segmentedControl>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Fda-hg-JqH">
                                 <rect key="frame" x="0.0" y="151" width="375" height="467"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -421,13 +417,35 @@
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="rm7-bS-g71" id="CxY-x9-pKy"/>
+                                    <outlet property="delegate" destination="rm7-bS-g71" id="5Wo-nb-K2m"/>
+                                </connections>
                             </tableView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="ggQ-JZ-pKs">
+                                <rect key="frame" x="22" y="87" width="331" height="29"/>
+                                <segments>
+                                    <segment title="Expense"/>
+                                    <segment title="Income"/>
+                                    <segment title="Debt &amp; Loan"/>
+                                </segments>
+                                <color key="tintColor" red="0.44705882349999998" green="0.69411764710000001" blue="0.3921568627" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="changeSegmen1WithSender:" destination="rm7-bS-g71" eventType="valueChanged" id="Vpm-vl-97R"/>
+                                </connections>
+                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="ggQ-JZ-pKs" firstAttribute="top" secondItem="V2n-Z5-bZw" secondAttribute="top" constant="23" id="03S-Sg-OEf"/>
+                            <constraint firstItem="ggQ-JZ-pKs" firstAttribute="leading" secondItem="V2n-Z5-bZw" secondAttribute="leading" constant="22" id="Pj9-2B-X4N"/>
+                            <constraint firstItem="V2n-Z5-bZw" firstAttribute="trailing" secondItem="ggQ-JZ-pKs" secondAttribute="trailing" constant="22" id="oBw-SE-LHy"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="V2n-Z5-bZw"/>
                     </view>
                     <navigationItem key="navigationItem" id="O36-RV-Bh2"/>
                     <connections>
+                        <outlet property="Segmen1" destination="ggQ-JZ-pKs" id="dl1-iJ-X6B"/>
                         <outlet property="tablekategori" destination="Fda-hg-JqH" id="Tx9-8F-49q"/>
                     </connections>
                 </viewController>

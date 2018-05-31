@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		075E951E20BF7AAB00C226E5 /* conf.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075E951D20BF7AAB00C226E5 /* conf.swift */; };
+		075E952020BF7CDC00C226E5 /* MasukViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075E951F20BF7CDC00C226E5 /* MasukViewController.swift */; };
 		0FECED43577B99801F5A723E /* Pods_projectiosUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F891C142552601C5EEABA059 /* Pods_projectiosUITests.framework */; };
 		13A0333D453E1F9C69C34C81 /* Pods_projectios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B633BDC316DAF45AED70BDDB /* Pods_projectios.framework */; };
 		421D773520BDCCC500ED4F0D /* PreInstallViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 421D773420BDCCC500ED4F0D /* PreInstallViewController.swift */; };
@@ -45,6 +47,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		075E951D20BF7AAB00C226E5 /* conf.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = conf.swift; sourceTree = "<group>"; };
+		075E951F20BF7CDC00C226E5 /* MasukViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasukViewController.swift; sourceTree = "<group>"; };
 		1D362EE7DD1ED87A021E5F4F /* Pods-projectiosUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-projectiosUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-projectiosUITests/Pods-projectiosUITests.release.xcconfig"; sourceTree = "<group>"; };
 		213B6665CAD3A3A1B80EC8D6 /* Pods-projectios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-projectios.release.xcconfig"; path = "Pods/Target Support Files/Pods-projectios/Pods-projectios.release.xcconfig"; sourceTree = "<group>"; };
 		421D773420BDCCC500ED4F0D /* PreInstallViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreInstallViewController.swift; sourceTree = "<group>"; };
@@ -131,19 +135,21 @@
 			isa = PBXGroup;
 			children = (
 				42BB5D1020BC7ADF00E2AAA6 /* AppDelegate.swift */,
-				42BB5D1220BC7ADF00E2AAA6 /* ViewController.swift */,
+				42F7EEB820BF61460050012B /* CategoryCell.swift */,
+				4264937C20BE837800F4EEF3 /* HistoriCell.swift */,
 				42BB5D1420BC7ADF00E2AAA6 /* Main.storyboard */,
 				42BB5D1720BC7AE100E2AAA6 /* Assets.xcassets */,
 				42BB5D1920BC7AE100E2AAA6 /* LaunchScreen.storyboard */,
 				42BB5D1C20BC7AE100E2AAA6 /* Info.plist */,
+				42BB5D1220BC7ADF00E2AAA6 /* ViewController.swift */,
 				421D773420BDCCC500ED4F0D /* PreInstallViewController.swift */,
-				4264937C20BE837800F4EEF3 /* HistoriCell.swift */,
 				4264937E20BE83C900F4EEF3 /* HistoriViewController.swift */,
+				075E951F20BF7CDC00C226E5 /* MasukViewController.swift */,
 				42F7EEB420BF57E40050012B /* WalletViewController.swift */,
-				42F7EEB820BF61460050012B /* CategoryCell.swift */,
 				42F7EEBA20BF61CE0050012B /* CategoryViewController.swift */,
 				42F7EEBC20BF6D930050012B /* MenuCell.swift */,
 				42F7EEBE20BF6DEE0050012B /* OtherViewController.swift */,
+				075E951D20BF7AAB00C226E5 /* conf.swift */,
 			);
 			path = projectios;
 			sourceTree = "<group>";
@@ -411,9 +417,11 @@
 				4264937D20BE837800F4EEF3 /* HistoriCell.swift in Sources */,
 				42F7EEBD20BF6D930050012B /* MenuCell.swift in Sources */,
 				42BB5D1320BC7ADF00E2AAA6 /* ViewController.swift in Sources */,
+				075E951E20BF7AAB00C226E5 /* conf.swift in Sources */,
 				42BB5D1120BC7ADF00E2AAA6 /* AppDelegate.swift in Sources */,
 				4264937F20BE83C900F4EEF3 /* HistoriViewController.swift in Sources */,
 				42F7EEB920BF61460050012B /* CategoryCell.swift in Sources */,
+				075E952020BF7CDC00C226E5 /* MasukViewController.swift in Sources */,
 				42F7EEB520BF57E40050012B /* WalletViewController.swift in Sources */,
 				421D773520BDCCC500ED4F0D /* PreInstallViewController.swift in Sources */,
 				42F7EEBF20BF6DEE0050012B /* OtherViewController.swift in Sources */,

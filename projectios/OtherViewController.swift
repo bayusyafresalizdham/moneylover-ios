@@ -11,6 +11,7 @@ import UIKit
 class OtherViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
     
 
+    @IBOutlet weak var uID: UILabel!
     @IBOutlet weak var tablemenu: UITableView!
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return elemen.count
@@ -41,6 +42,7 @@ class OtherViewController: UIViewController,UITableViewDelegate,UITableViewDataS
         tablemenu.rowHeight = 50;
         tablemenu.estimatedRowHeight = 50;
         self.title = "Other"
+        uID.text = Config.uID
     }
     
     override func didReceiveMemoryWarning() {
