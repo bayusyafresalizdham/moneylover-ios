@@ -8,6 +8,7 @@ target 'projectios' do
   pod "FSPagerView"
   pod "Kingfisher"
   pod "SwiftChart"
+  pod "RealmSwift"
 
   # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
   use_frameworks!

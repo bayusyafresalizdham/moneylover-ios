@@ -7,7 +7,6 @@
 //
 
 import UIKit
-
 class PreInstallViewController: UIViewController , UIScrollViewDelegate{
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var pageControl: UIPageControl!
@@ -19,9 +18,11 @@ class PreInstallViewController: UIViewController , UIScrollViewDelegate{
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController?.isNavigationBarHidden = true
+
         scrollView.showsHorizontalScrollIndicator = false
         scrollView.delegate = self
-        
+      
         for image in 0..<4 {
             let imageToDisplay = UIImage(named: gambar[image])
             let imageView = UIImageView(image: imageToDisplay)

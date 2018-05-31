@@ -8,6 +8,7 @@
 
 import UIKit
 import Alamofire
+import Kingfisher
 
 class CategoryViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
     @IBOutlet weak var tablekategori: UITableView!
@@ -33,13 +34,11 @@ class CategoryViewController: UIViewController,UITableViewDelegate,UITableViewDa
         if(sender.selectedSegmentIndex==0)
         {
             getKategoriExpense()
-         tablekategori.tag = 0
+            tablekategori.tag = 0
         }else if (sender.selectedSegmentIndex==1)
         {
-            
             getKategoriIncome()
-           
-         tablekategori.tag = 1
+            tablekategori.tag = 1
         }else if (sender.selectedSegmentIndex==2){
             tablekategori.tag = 2
             getKategoriOther()
@@ -58,7 +57,10 @@ class CategoryViewController: UIViewController,UITableViewDelegate,UITableViewDa
             let eachelement = elements[indexPath.row]
             print(eachelement)
             cell.title?.text = eachelement["category_name"] as? String ?? ""
-            cell.img?.image = UIImage(named: eachelement["category_img"] as? String ?? "icon")
+            let icon = eachelement["category_img"] as? String ?? "icon";
+            let url = URL(string: Config.base_img_url+icon)
+            cell.img.kf.setImage(with: url)
+
         }
        // cell.title.text = elemen[indexPath.row]
         //cell.img.image = UIImage(named: image[indexPath.row])

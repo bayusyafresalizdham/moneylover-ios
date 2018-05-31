@@ -3,6 +3,11 @@ PODS:
   - FSPagerView (0.7.1)
   - Kingfisher (4.7.0)
   - MonthYearPicker (3.0.0)
+  - Realm (3.3.2):
+    - Realm/Headers (= 3.3.2)
+  - Realm/Headers (3.3.2)
+  - RealmSwift (3.3.2):
+    - Realm (= 3.3.2)
   - SwiftChart (1.0.1)
 
 DEPENDENCIES:
@@ -10,6 +15,7 @@ DEPENDENCIES:
   - FSPagerView
   - Kingfisher
   - MonthYearPicker
+  - RealmSwift
   - SwiftChart
 
 SPEC REPOS:
@@ -18,6 +24,8 @@ SPEC REPOS:
     - FSPagerView
     - Kingfisher
     - MonthYearPicker
+    - Realm
+    - RealmSwift
     - SwiftChart
 
 SPEC CHECKSUMS:
@@ -25,8 +33,10 @@ SPEC CHECKSUMS:
   FSPagerView: 958aba39684e1573755ddcfcc29f7eebb8413cee
   Kingfisher: da6b005aa96d37698e3e4f1ccfe96a5b9bbf27d6
   MonthYearPicker: 59cfa26c5bfbbc52ef147360d9846c349f578991
+  Realm: d927fbf66df5532cfafc08afb5f7e53ded37b894
+  RealmSwift: 4e903a494e05d866581d69ad6f7e7b879d446baf
   SwiftChart: ba767a678d568a5ee22d419e146a0582865e1aff
 
-PODFILE CHECKSUM: 6e694ebb3f5eb5763726f056ca95f42df07982e5
+PODFILE CHECKSUM: 08b6d6ddc85b4c5e6f3103473d855b287215437e
 
 COCOAPODS: 1.5.0

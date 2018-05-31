@@ -9,6 +9,8 @@
 import UIKit
 import Foundation
 import Alamofire
+import RealmSwift
+
 class MasukViewController: ViewController {
 
     override func viewDidLoad() {
@@ -38,6 +40,19 @@ class MasukViewController: ViewController {
                         print(status)
                         Config.uID = email
                         Config.token = token
+                        let realm = try! Realm()
+                        let puppies = realm.objects(DBUser.self).count
+                        if String(puppies) == "0"{
+                            print("token")
+                            let user = DBUser()
+                            user.token = token
+                            user.email = email
+                            try! realm.write {
+                                realm.add(user)
+                            }
+                        }else{
+                            print("token1")
+                        }
                         self.performSegue(withIdentifier: "loginSegue", sender: nil)
                     }
                 }
@@ -71,11 +86,6 @@ class MasukViewController: ViewController {
         //    print("Data: \(utf8Text)") // original server data as UTF8 string
         // }
     }
-
- //   override func didReceiveMemoryWarning() {
-   ///     super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    //}
     
     func presentAlert(alert:String){
         let alertVC = UIAlertController(title:"Error",message:alert,preferredStyle: .alert)
@@ -86,14 +96,5 @@ class MasukViewController: ViewController {
         present(alertVC,animated: true,completion: nil)
     }
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
