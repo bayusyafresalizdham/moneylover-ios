@@ -1,0 +1,6 @@
+framework module Pods_projectios {
+  umbrella header "Pods-projectios-umbrella.h"
+
+  export *
+  module * { export * }
+}
