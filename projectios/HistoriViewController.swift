@@ -31,7 +31,30 @@ class HistoriViewController: UIViewController, UITableViewDelegate,UITableViewDa
     }
     func getHistori(tanggalnow : String){
         let header = ["token":Config.token]
+        print(Config.base_url+Config.getAPI(jenis:"transactionall/"+tanggalnow)+"asd")
         Alamofire.request(Config.base_url+Config.getAPI(jenis:"transactionall/"+tanggalnow), method:.get,parameters:nil,encoding:JSONEncoding.default,headers:header).responseJSON{
+            response in
+            if let json : [String:Any] = response.result.value as?[String:Any]{
+                print(json)
+                let message=json["message"].unsafelyUnwrapped as!String
+                let status = json["status"].unsafelyUnwrapped as!Int
+                //print("coba"+message)
+                if let array = json["data"] as? [[String: Any]] {
+                    //If you want array of task id you can try like
+                    //let name_wallet = array.flatMap { $0["name_wallet"] as? String }
+                   // print(array[0]["id_transaction"].unsafelyUnwrapped)
+                    self.elements = array
+                    
+                    self.coba?.reloadData()
+                }
+            }
+        }
+        
+    }
+    func getHistoriWithWallet(wallet : String,tanggalnow : String){
+        let header = ["token":Config.token]
+        print(Config.base_url+Config.getAPI(jenis:"transaction/"+wallet+"/"+tanggalnow))
+        Alamofire.request(Config.base_url+Config.getAPI(jenis:"transaction/"+wallet+"/"+tanggalnow), method:.get,parameters:nil,encoding:JSONEncoding.default,headers:header).responseJSON{
             response in
             if let json : [String:Any] = response.result.value as?[String:Any]{
                 let message=json["message"].unsafelyUnwrapped as!String
@@ -179,8 +202,34 @@ class HistoriViewController: UIViewController, UITableViewDelegate,UITableViewDa
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         performSegue(withIdentifier: "pindahDetail", sender: self)
     }
+    public func ubah(){
+        self.coba.reloadData()
+    }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        //self.coba.reloadData()
+       print("jos1")
+    }
+    override func viewDidAppear(_ animated: Bool) {
+        print("jos2")
+        self.coba.reloadData()
+        if(Config.walletfilter != ""){
+            
+            if(Config.datefilter != ""){
+                getHistoriWithWallet(wallet: Config.walletfilter, tanggalnow: Config.datefilter)
+            }else{
+                getHistoriWithWallet(wallet: Config.walletfilter, tanggalnow: dateList[tanggal.selectedSegmentIndex])
+            }
+        }else{
+            if(Config.datefilter != ""){
+                print("kwkwk1")
+                getHistori(tanggalnow: Config.datefilter)
+            }else{
+                print("kwkwk2")
+                getHistori(tanggalnow: dateList[tanggal.selectedSegmentIndex])
+            }
+        }
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        print("kwkw")
     }
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -203,9 +252,48 @@ class HistoriViewController: UIViewController, UITableViewDelegate,UITableViewDa
             index = index + 1
         }
         
-        getHistori(tanggalnow: dateList[2])
+        //getHistori(tanggalnow: dateList[2])
+        NotificationCenter.default.addObserver(self, selector: #selector(loadList), name: NSNotification.Name(rawValue: "load"), object: nil)
 
+        NotificationCenter.default.addObserver(self, selector: #selector(loadListwallet), name: NSNotification.Name(rawValue: "loadwithwallet"), object: nil)
 
+    }
+    @objc func loadList(){
+        self.coba.reloadData()
+        if(Config.walletfilter != ""){
+            
+            if(Config.datefilter != ""){
+                getHistoriWithWallet(wallet: Config.walletfilter, tanggalnow: Config.datefilter)
+            }else{
+                getHistoriWithWallet(wallet: Config.walletfilter, tanggalnow: dateList[tanggal.selectedSegmentIndex])
+            }
+        }else{
+            if(Config.datefilter != ""){
+                getHistori(tanggalnow: Config.datefilter)
+            }else{
+                getHistori(tanggalnow: dateList[tanggal.selectedSegmentIndex])
+            }
+        }
+        print("jos"+Config.datefilter)
+    }
+    
+    @objc func loadListwallet(){
+        self.coba.reloadData()
+        if(Config.walletfilter != ""){
+            
+            if(Config.datefilter != ""){
+                getHistoriWithWallet(wallet: Config.walletfilter, tanggalnow: Config.datefilter)
+            }else{
+                getHistoriWithWallet(wallet: Config.walletfilter, tanggalnow: dateList[tanggal.selectedSegmentIndex])
+            }
+        }else{
+            if(Config.datefilter != ""){
+                getHistori(tanggalnow: Config.datefilter)
+            }else{
+                getHistori(tanggalnow: dateList[tanggal.selectedSegmentIndex])
+            }
+        }
+        print("jos"+Config.walletfilter)
     }
     
     override func didReceiveMemoryWarning() {

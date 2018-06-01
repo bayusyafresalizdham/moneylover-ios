@@ -129,8 +129,6 @@ class CategoryViewController: UIViewController,UITableViewDelegate,UITableViewDa
     }
     func getKategoriExpense(){
         let header = ["token":Config.token]
-        
-        
         Alamofire.request(Config.base_url+Config.getAPI(jenis:"category/expense"), method:.get,parameters:nil,encoding:JSONEncoding.default,headers:header).responseJSON{
             response in
             if let json : [String:Any] = response.result.value as?[String:Any]{

@@ -1,5 +1,5 @@
- //
-//  DatePopUpViewController.swift
+//
+//  SelectDateViewController.swift
 //  projectios
 //
 //  Created by Bayu Syafresal Izdham on 01/06/18.
@@ -8,31 +8,27 @@
 
 import UIKit
 
-class DatePopUpViewController: UIViewController {
+class SelectDateViewController: UIViewController {
 
-    @IBOutlet weak var tanggal: UIDatePicker!
-    @IBOutlet weak var btnsave: UIButton!
-    var addItemVC : HistoriViewController? = HistoriViewController()
-
+    @IBOutlet weak var date_add: UIDatePicker!
+    @IBOutlet weak var click_save: UIButton!
+    @IBAction func click_cancel(_ sender: Any) {
+        dismiss(animated: true)
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        // Do any additional setup after loading the view.
     }
 
-    @IBOutlet weak var cancelkan: UIButton!
-    
-    @IBAction func tekancancel(_ sender: Any) {
-       // NotificationCenter.default.post(name: NSNotification.Name(rawValue: "load"), object: nil)
-
-         dismiss(animated: true)
-    }
-    @IBAction func savedata(_ sender: Any) {
-        tanggal.datePickerMode = UIDatePickerMode.date
+    @IBAction func save_click(_ sender: Any) {
+        date_add.datePickerMode = UIDatePickerMode.date
         var dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd"
-        var selectedDate = dateFormatter.string(from: tanggal.date)
+        var selectedDate = dateFormatter.string(from: date_add.date)
         //print(selectedDate)
-        Config.datefilter = selectedDate
-        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "load"), object: nil)
+        Config.add_date = selectedDate
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "settanggal"), object: nil)
         dismiss(animated: true)
     }
     override func didReceiveMemoryWarning() {

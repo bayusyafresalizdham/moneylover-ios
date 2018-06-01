@@ -19,6 +19,13 @@
 		42799C5820C0372800B985AB /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42799C5720C0372800B985AB /* MainViewController.swift */; };
 		42799C5A20C0379D00B985AB /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42799C5920C0379D00B985AB /* SplashViewController.swift */; };
 		42799C5C20C0916C00B985AB /* DatePopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42799C5B20C0916C00B985AB /* DatePopUpViewController.swift */; };
+		42B4E90220C13A3F000D9BEF /* WalletPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42B4E90120C13A3F000D9BEF /* WalletPopupViewController.swift */; };
+		42B4E90420C1550B000D9BEF /* AddTransactionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42B4E90320C1550B000D9BEF /* AddTransactionViewController.swift */; };
+		42B4E90620C1A876000D9BEF /* SelectWalletViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42B4E90520C1A876000D9BEF /* SelectWalletViewController.swift */; };
+		42B4E90820C1ADAC000D9BEF /* SelectCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42B4E90720C1ADAC000D9BEF /* SelectCategoryViewController.swift */; };
+		42B4E90A20C1AF7F000D9BEF /* SelectDateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42B4E90920C1AF7F000D9BEF /* SelectDateViewController.swift */; };
+		42B4E90C20C1BE06000D9BEF /* AddWalletViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42B4E90B20C1BE06000D9BEF /* AddWalletViewController.swift */; };
+		42B4E90E20C1EBED000D9BEF /* WalletCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42B4E90D20C1EBED000D9BEF /* WalletCell.swift */; };
 		42BB5D1120BC7ADF00E2AAA6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42BB5D1020BC7ADF00E2AAA6 /* AppDelegate.swift */; };
 		42BB5D1320BC7ADF00E2AAA6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42BB5D1220BC7ADF00E2AAA6 /* ViewController.swift */; };
 		42BB5D1620BC7ADF00E2AAA6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42BB5D1420BC7ADF00E2AAA6 /* Main.storyboard */; };
@@ -64,6 +71,13 @@
 		42799C5720C0372800B985AB /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		42799C5920C0379D00B985AB /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
 		42799C5B20C0916C00B985AB /* DatePopUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePopUpViewController.swift; sourceTree = "<group>"; };
+		42B4E90120C13A3F000D9BEF /* WalletPopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletPopupViewController.swift; sourceTree = "<group>"; };
+		42B4E90320C1550B000D9BEF /* AddTransactionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTransactionViewController.swift; sourceTree = "<group>"; };
+		42B4E90520C1A876000D9BEF /* SelectWalletViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectWalletViewController.swift; sourceTree = "<group>"; };
+		42B4E90720C1ADAC000D9BEF /* SelectCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCategoryViewController.swift; sourceTree = "<group>"; };
+		42B4E90920C1AF7F000D9BEF /* SelectDateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectDateViewController.swift; sourceTree = "<group>"; };
+		42B4E90B20C1BE06000D9BEF /* AddWalletViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddWalletViewController.swift; sourceTree = "<group>"; };
+		42B4E90D20C1EBED000D9BEF /* WalletCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletCell.swift; sourceTree = "<group>"; };
 		42BB5D0D20BC7ADF00E2AAA6 /* projectios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = projectios.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		42BB5D1020BC7ADF00E2AAA6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		42BB5D1220BC7ADF00E2AAA6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -165,6 +179,13 @@
 				42799C5720C0372800B985AB /* MainViewController.swift */,
 				42799C5920C0379D00B985AB /* SplashViewController.swift */,
 				42799C5B20C0916C00B985AB /* DatePopUpViewController.swift */,
+				42B4E90120C13A3F000D9BEF /* WalletPopupViewController.swift */,
+				42B4E90320C1550B000D9BEF /* AddTransactionViewController.swift */,
+				42B4E90520C1A876000D9BEF /* SelectWalletViewController.swift */,
+				42B4E90720C1ADAC000D9BEF /* SelectCategoryViewController.swift */,
+				42B4E90920C1AF7F000D9BEF /* SelectDateViewController.swift */,
+				42B4E90B20C1BE06000D9BEF /* AddWalletViewController.swift */,
+				42B4E90D20C1EBED000D9BEF /* WalletCell.swift */,
 			);
 			path = projectios;
 			sourceTree = "<group>";
@@ -438,17 +459,24 @@
 				4264937D20BE837800F4EEF3 /* HistoriCell.swift in Sources */,
 				42799C5C20C0916C00B985AB /* DatePopUpViewController.swift in Sources */,
 				42799C5220C0284C00B985AB /* DBUser.swift in Sources */,
+				42B4E90220C13A3F000D9BEF /* WalletPopupViewController.swift in Sources */,
+				42B4E90C20C1BE06000D9BEF /* AddWalletViewController.swift in Sources */,
 				42F7EEBD20BF6D930050012B /* MenuCell.swift in Sources */,
 				42799C5620C02BDB00B985AB /* RegistrationViewController.swift in Sources */,
 				42BB5D1320BC7ADF00E2AAA6 /* ViewController.swift in Sources */,
 				075E951E20BF7AAB00C226E5 /* conf.swift in Sources */,
+				42B4E90820C1ADAC000D9BEF /* SelectCategoryViewController.swift in Sources */,
 				42BB5D1120BC7ADF00E2AAA6 /* AppDelegate.swift in Sources */,
+				42B4E90620C1A876000D9BEF /* SelectWalletViewController.swift in Sources */,
 				4264937F20BE83C900F4EEF3 /* HistoriViewController.swift in Sources */,
 				42799C5820C0372800B985AB /* MainViewController.swift in Sources */,
+				42B4E90A20C1AF7F000D9BEF /* SelectDateViewController.swift in Sources */,
 				42F7EEB920BF61460050012B /* CategoryCell.swift in Sources */,
 				075E952020BF7CDC00C226E5 /* MasukViewController.swift in Sources */,
 				42F7EEB520BF57E40050012B /* WalletViewController.swift in Sources */,
 				421D773520BDCCC500ED4F0D /* PreInstallViewController.swift in Sources */,
+				42B4E90E20C1EBED000D9BEF /* WalletCell.swift in Sources */,
+				42B4E90420C1550B000D9BEF /* AddTransactionViewController.swift in Sources */,
 				42F7EEBF20BF6DEE0050012B /* OtherViewController.swift in Sources */,
 				42799C5A20C0379D00B985AB /* SplashViewController.swift in Sources */,
 			);

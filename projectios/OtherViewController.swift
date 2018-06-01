@@ -25,16 +25,26 @@ class OtherViewController: UIViewController,UITableViewDelegate,UITableViewDataS
         
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        performSegue(withIdentifier: "pindahDetail", sender: self)
+        if(indexPath.row == 0){
+            performSegue(withIdentifier: "ubahpassword", sender: self)
+        }else if(indexPath.row == 1){
+            let url = NSURL(string: "http://note.moneylover.me/")!
+            UIApplication.shared.openURL(url as URL as URL)
+        }else if(indexPath.row == 2){
+            let url = NSURL(string: "https://web.facebook.com/moneylover.me/")!
+            UIApplication.shared.openURL(url as URL as URL)
+        }else if(indexPath.row == 3){
+            performSegue(withIdentifier: "pindahabout", sender: self)
+        }
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
     }
     
     
-    let elemen = ["Pengelolaan Akun","Dompet Saya","Jelajahi Money Lover","Bantuan & Dukungan"
+    let elemen = ["Pengelolaan Akun","Jelajahi Money Lover","Bantuan & Dukungan"
         ,"Tentang", "Keluar"]
-    let image = ["icon_menu","icon_dompet","icon_jelajahi","icon_bantuan","icon_tentang","icon_logout"]
+    let image = ["icon_menu","icon_jelajahi","icon_bantuan","icon_tentang","icon_logout"]
     override func viewDidLoad() {
         super.viewDidLoad()
         tablemenu.delegate = self;
