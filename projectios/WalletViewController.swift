@@ -37,7 +37,7 @@ class WalletViewController: UIViewController,UITableViewDelegate,UITableViewData
     func getwallet(){
         let header = ["token":Config.token]
         
-        
+        print("asasd "+Config.token)
         Alamofire.request(Config.base_url+Config.getAPI(jenis:"mywallet"), method:.get,parameters:nil,encoding:JSONEncoding.default,headers:header).responseJSON{
             response in
             if let json : [String:Any] = response.result.value as?[String:Any]{

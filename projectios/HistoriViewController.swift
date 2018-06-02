@@ -28,10 +28,11 @@ class HistoriViewController: UIViewController, UITableViewDelegate,UITableViewDa
         
         getHistori(tanggalnow: dateList[sender.selectedSegmentIndex])
         coba.reloadData()
+        Config.datefilter = dateList[sender.selectedSegmentIndex]
     }
     func getHistori(tanggalnow : String){
         let header = ["token":Config.token]
-        print(Config.base_url+Config.getAPI(jenis:"transactionall/"+tanggalnow)+"asd")
+        print(Config.base_url+Config.getAPI(jenis:"transactionall/"+tanggalnow))
         Alamofire.request(Config.base_url+Config.getAPI(jenis:"transactionall/"+tanggalnow), method:.get,parameters:nil,encoding:JSONEncoding.default,headers:header).responseJSON{
             response in
             if let json : [String:Any] = response.result.value as?[String:Any]{
@@ -160,6 +161,7 @@ class HistoriViewController: UIViewController, UITableViewDelegate,UITableViewDa
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = coba.dequeueReusableCell(withIdentifier: "customcell") as! HistoriCell
+        print("ukuran")
         if elements.count>0
         {
             let eachelement = elements[indexPath.row]
@@ -206,10 +208,8 @@ class HistoriViewController: UIViewController, UITableViewDelegate,UITableViewDa
         self.coba.reloadData()
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-       print("jos1")
     }
     override func viewDidAppear(_ animated: Bool) {
-        print("jos2")
         self.coba.reloadData()
         if(Config.walletfilter != ""){
             
@@ -220,16 +220,13 @@ class HistoriViewController: UIViewController, UITableViewDelegate,UITableViewDa
             }
         }else{
             if(Config.datefilter != ""){
-                print("kwkwk1")
                 getHistori(tanggalnow: Config.datefilter)
             }else{
-                print("kwkwk2")
                 getHistori(tanggalnow: dateList[tanggal.selectedSegmentIndex])
             }
         }
     }
     override func viewWillAppear(_ animated: Bool) {
-        print("kwkw")
     }
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -274,7 +271,6 @@ class HistoriViewController: UIViewController, UITableViewDelegate,UITableViewDa
                 getHistori(tanggalnow: dateList[tanggal.selectedSegmentIndex])
             }
         }
-        print("jos"+Config.datefilter)
     }
     
     @objc func loadListwallet(){
@@ -293,7 +289,6 @@ class HistoriViewController: UIViewController, UITableViewDelegate,UITableViewDa
                 getHistori(tanggalnow: dateList[tanggal.selectedSegmentIndex])
             }
         }
-        print("jos"+Config.walletfilter)
     }
     
     override func didReceiveMemoryWarning() {

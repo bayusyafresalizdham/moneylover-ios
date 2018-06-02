@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 class OtherViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
     
@@ -35,6 +36,13 @@ class OtherViewController: UIViewController,UITableViewDelegate,UITableViewDataS
             UIApplication.shared.openURL(url as URL as URL)
         }else if(indexPath.row == 3){
             performSegue(withIdentifier: "pindahabout", sender: self)
+        }
+        else if(indexPath.row == 4) {
+            let realm = try! Realm()
+            try! realm.write {
+                realm.deleteAll()
+            }
+            performSegue(withIdentifier: "pindahlogin", sender: self)
         }
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

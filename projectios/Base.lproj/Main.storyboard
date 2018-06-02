@@ -84,6 +84,9 @@
                                 <state key="normal" title="Daftar">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="daftarClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="DzT-Kh-mKO"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xyJ-aY-jBI">
                                 <rect key="frame" x="49" y="365" width="276" height="30"/>
@@ -103,7 +106,7 @@
                                     <color key="titleColor" red="0.44705882352941179" green="0.69019607843137254" blue="0.39215686274509803" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="dy7-Jm-EEF" kind="show" id="FMx-VM-4h0"/>
+                                    <action selector="btnLogin:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Dvv-RA-gSR"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Daftarkan diri anda sekarang" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mLy-fC-Fvj">
@@ -125,6 +128,12 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="VBD-nX-fOt"/>
+                    <connections>
+                        <outlet property="btnDaftar" destination="HXp-yg-AJv" id="8TT-Qv-pqy"/>
+                        <outlet property="textRegisEmail" destination="40x-wH-FZO" id="Aex-8E-ogB"/>
+                        <outlet property="textRegisPassword" destination="xyJ-aY-jBI" id="nxs-Ds-JhQ"/>
+                        <segue destination="dy7-Jm-EEF" kind="show" identifier="pindahlogin" id="too-HZ-UsK"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -427,16 +436,17 @@
                         <outlet property="tablemenu" destination="9W6-NQ-Q5n" id="7aR-HG-cjr"/>
                         <outlet property="uID" destination="kwD-pM-gvG" id="5In-oK-mUi"/>
                         <segue destination="uRa-Vv-4FJ" kind="show" identifier="ubahpassword" id="k9D-9X-T3a"/>
+                        <segue destination="dy7-Jm-EEF" kind="show" identifier="pindahlogin" id="AOC-sU-N1y"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kKD-VL-6YZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1416.8" y="707.49625187406298"/>
         </scene>
-        <!--View Controller-->
+        <!--Change Password-->
         <scene sceneID="1MK-BY-kQR">
             <objects>
-                <viewController id="uRa-Vv-4FJ" sceneMemberID="viewController">
+                <viewController id="uRa-Vv-4FJ" customClass="ChangePasswordViewController" customModule="projectios" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Nq3-Kp-iRX">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -490,12 +500,20 @@
                                 <state key="normal" title="Simpan">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="btnSimpan:" destination="uRa-Vv-4FJ" eventType="touchUpInside" id="lW9-7u-bEV"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="x4d-dR-GTE"/>
                     </view>
-                    <navigationItem key="navigationItem" id="idI-bm-xac"/>
+                    <navigationItem key="navigationItem" title="Change Password" id="idI-bm-xac"/>
+                    <connections>
+                        <outlet property="new" destination="XcS-m6-fxy" id="vYm-Mr-a6s"/>
+                        <outlet property="now" destination="ZAj-sN-avB" id="VV6-m0-I0j"/>
+                        <outlet property="ulang" destination="pSn-ho-9vd" id="Bzn-HI-qMP"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="D6O-J2-0vh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1404,7 +1422,6 @@
         <!--Navigation Controller-->
         <scene sceneID="tDb-cA-LnO">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="DKu-Ph-EqE" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="TR4-fw-a2X" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="WVi-s6-Abj">
@@ -1416,6 +1433,7 @@
                         <segue destination="uRa-Vv-4FJ" kind="relationship" relationship="rootViewController" id="NEG-RY-Wff"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DKu-Ph-EqE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2160.8000000000002" y="707.49625187406298"/>
         </scene>
@@ -1431,5 +1449,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="k9D-9X-T3a"/>
+        <segue reference="too-HZ-UsK"/>
     </inferredMetricsTieBreakers>
 </document>

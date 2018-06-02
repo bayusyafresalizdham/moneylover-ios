@@ -10,8 +10,8 @@ import Foundation
 
 struct Config
 {
-    static var base_url:String = "https://moneylover.namagz.com/"
-    static var base_img_url:String = "https://moneylover.namagz.com/img/";
+    static var base_url:String = "http://moneylover.namagz.com/"
+    static var base_img_url:String = "http://moneylover.namagz.com/img/";
     static var uID = ""
     static var token = ""
     static var datefilter = ""
